@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="img/logo.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.01803549.css">
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -185,7 +185,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -257,7 +257,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#demonstration" title="Demonstration" class="md-nav__link">
+  <a href="#demonstration" class="md-nav__link">
     Demonstration
   </a>
   
@@ -265,14 +265,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forward-mode" title="Forward mode" class="md-nav__link">
+  <a href="#forward-mode" class="md-nav__link">
     Forward mode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reverse-mode" title="Reverse mode" class="md-nav__link">
+  <a href="#reverse-mode" class="md-nav__link">
     Reverse mode
   </a>
   
@@ -280,6 +280,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-in-touch" class="md-nav__link">
+    Get in touch!
+  </a>
   
 </li>
       
@@ -363,7 +370,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#demonstration" title="Demonstration" class="md-nav__link">
+  <a href="#demonstration" class="md-nav__link">
     Demonstration
   </a>
   
@@ -371,14 +378,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forward-mode" title="Forward mode" class="md-nav__link">
+  <a href="#forward-mode" class="md-nav__link">
     Forward mode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reverse-mode" title="Reverse mode" class="md-nav__link">
+  <a href="#reverse-mode" class="md-nav__link">
     Reverse mode
   </a>
   
@@ -386,6 +393,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-in-touch" class="md-nav__link">
+    Get in touch!
+  </a>
   
 </li>
       
@@ -410,6 +424,7 @@
                 
                 <p><img src='img/header.svg' width='100%'></p>
 <hr />
+<p><a href="https://gitter.im/autodiff/community"><img alt="Gitter chat" src="https://badges.gitter.im/autodiff/gitter.png" /></a></p>
 <h1 id="autodiff"><span style="font-family:'Comfortaa'">autodiff</span><a class="headerlink" href="#autodiff" title="Permanent link">&para;</a></h1>
 <p><span style="font-family:'Comfortaa'">autodiff</span> is a C++17 library that uses modern and advanced programming
 techniques to enable automatic computation of derivatives in an efficient
@@ -465,9 +480,9 @@ input and output variables:</p>
 <span class="n">dual</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span>
 <span class="n">dual</span> <span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
 
-<span class="kt">double</span> <span class="n">dudx</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
-<span class="kt">double</span> <span class="n">dudy</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
-<span class="kt">double</span> <span class="n">dudz</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span> <span class="n">ux</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span> <span class="n">uy</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span> <span class="n">uz</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
 </pre></div>
 
 <p>The auxiliary function <code>autodiff::wrt</code>, an acronym for <strong>with respect to</strong>,
@@ -510,11 +525,7 @@ can be calculated:</p>
 <span class="n">var</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
 
-<span class="n">Derivatives</span> <span class="n">dud</span> <span class="o">=</span> <span class="n">derivatives</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-
-<span class="kt">double</span> <span class="n">dudx</span> <span class="o">=</span> <span class="n">dud</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="kt">double</span> <span class="n">dudy</span> <span class="o">=</span> <span class="n">dud</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
-<span class="kt">double</span> <span class="n">dudz</span> <span class="o">=</span> <span class="n">dud</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
+<span class="kt">double</span> <span class="p">[</span><span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">,</span> <span class="n">uz</span><span class="p">]</span> <span class="o">=</span> <span class="n">derivatives</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">));</span>
 </pre></div>
 
 <p>The function <code>autodiff::derivatives</code> will traverse the expression tree stored
@@ -524,6 +535,8 @@ derivative of <code>u</code> with respect to input variable <code>x</code> (i.e.
 be extracted from <code>dud</code> using <code>dud(x)</code>. The operations <code>dud(x)</code>, <code>dud(y)</code>,
 <code>dud(z)</code> involve no computations! Just extraction of derivatives previously
 computed with a call to function <code>autodiff::derivatives</code>.</p>
+<h2 id="get-in-touch">Get in touch!<a class="headerlink" href="#get-in-touch" title="Permanent link">&para;</a></h2>
+<p>Contact us on <a href="https://gitter.im/autodiff/community">Gitter</a> if you need support and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>.</p>
                 
                   
                 
@@ -567,7 +580,7 @@ computed with a call to function <code>autodiff::derivatives</code>.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2018–2019 Allan Leal
+            Copyright &copy; 2018–2020 Allan Leal
           </div>
         
         powered by
@@ -583,7 +596,7 @@ computed with a call to function <code>autodiff::derivatives</code>.</p>
       
     </div>
     
-      <script src="assets/javascripts/application.245445c6.js"></script>
+      <script src="assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
