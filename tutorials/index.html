@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://autodiff.github.io/tutorials/">
       
       <link rel="icon" href="../img/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -630,11 +630,11 @@
 <h3 id="single-variable-function">Single-variable function<a class="headerlink" href="#single-variable-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The single-variable function for which derivatives are needed</span>
 <span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="n">dual</span> <span class="n">x</span><span class="p">)</span>
@@ -656,11 +656,11 @@
 <h3 id="multi-variable-function">Multi-variable function<a class="headerlink" href="#multi-variable-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The multi-variable function for which derivatives are needed</span>
 <span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="n">dual</span> <span class="n">x</span><span class="p">,</span> <span class="n">dual</span> <span class="n">y</span><span class="p">,</span> <span class="n">dual</span> <span class="n">z</span><span class="p">)</span>
@@ -689,11 +689,11 @@
 <h3 id="multi-variable-function-with-parameters">Multi-variable function with parameters<a class="headerlink" href="#multi-variable-function-with-parameters" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// A type defining parameters for a function of interest</span>
 <span class="k">struct</span> <span class="nc">Params</span>
@@ -735,16 +735,16 @@
 <h3 id="gradient-of-a-scalar-function">Gradient of a scalar function<a class="headerlink" href="#gradient-of-a-scalar-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The scalar function for which the gradient is needed</span>
 <span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
@@ -768,16 +768,16 @@
 <h3 id="gradient-of-a-scalar-function-with-parameters">Gradient of a scalar function with parameters<a class="headerlink" href="#gradient-of-a-scalar-function-with-parameters" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The scalar function for which the gradient is needed</span>
 <span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span>
@@ -808,16 +808,16 @@
 <h3 id="jacobian-of-a-vector-function">Jacobian of a vector function<a class="headerlink" href="#jacobian-of-a-vector-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The vector function for which the Jacobian is needed</span>
 <span class="n">VectorXdual</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
@@ -841,16 +841,16 @@
 <h3 id="jacobian-of-a-vector-function-with-parameters">Jacobian of a vector function with parameters<a class="headerlink" href="#jacobian-of-a-vector-function-with-parameters" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The vector function with parameters for which the Jacobian is needed</span>
 <span class="n">VectorXdual</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="n">VectorXdual</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span>
@@ -881,11 +881,11 @@
 <h3 id="higher-order-derivatives-of-a-multi-variable-function">Higher-order derivatives of a multi-variable function<a class="headerlink" href="#higher-order-derivatives-of-a-multi-variable-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// Define a 2nd order dual type using HigherOrderDual&lt;N&gt; construct.</span>
 <span class="k">using</span> <span class="n">dual2nd</span> <span class="o">=</span> <span class="n">HigherOrderDual</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
@@ -923,11 +923,11 @@
 <h3 id="single-variable-function_1">Single-variable function<a class="headerlink" href="#single-variable-function_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The single-variable function for which derivatives are needed</span>
 <span class="n">var</span> <span class="nf">f</span><span class="p">(</span><span class="n">var</span> <span class="n">x</span><span class="p">)</span>
@@ -949,11 +949,11 @@
 <h3 id="multi-variable-function_1">Multi-variable function<a class="headerlink" href="#multi-variable-function_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The multi-variable function for which derivatives are needed</span>
 <span class="n">var</span> <span class="nf">f</span><span class="p">(</span><span class="n">var</span> <span class="n">x</span><span class="p">,</span> <span class="n">var</span> <span class="n">y</span><span class="p">,</span> <span class="n">var</span> <span class="n">z</span><span class="p">)</span>
@@ -979,11 +979,11 @@
 <h3 id="multi-variable-function-with-parameters_1">Multi-variable function with parameters<a class="headerlink" href="#multi-variable-function-with-parameters_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// A type defining parameters for a function of interest</span>
 <span class="k">struct</span> <span class="nc">Params</span>
@@ -1021,16 +1021,16 @@
 <h3 id="gradient-of-a-scalar-function_1">Gradient of a scalar function<a class="headerlink" href="#gradient-of-a-scalar-function_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The scalar function for which the gradient is needed</span>
 <span class="n">var</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXvar</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
@@ -1054,16 +1054,16 @@
 <h3 id="hessian-of-a-scalar-function">Hessian of a scalar function<a class="headerlink" href="#hessian-of-a-scalar-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// Eigen includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;Eigen/Core&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Eigen</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Eigen</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse/eigen.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="c1">// The scalar function for which the gradient is needed</span>
 <span class="n">var</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">VectorXvar</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
@@ -1089,11 +1089,11 @@
 <h3 id="higher-order-derivatives-of-a-single-variable-function">Higher-order derivatives of a single-variable function<a class="headerlink" href="#higher-order-derivatives-of-a-single-variable-function" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -1123,11 +1123,11 @@
 <h3 id="higher-order-derivatives-of-a-multi-variable-function_1">Higher-order derivatives of a multi-variable function<a class="headerlink" href="#higher-order-derivatives-of-a-multi-variable-function_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="c1">// autodiff include</span>
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/reverse.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -1169,10 +1169,10 @@
 <hr />
 <p><strong>main.cpp</strong>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;autodiff/forward.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">autodiff</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">autodiff</span><span class="p">;</span>
 
 <span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="n">dual</span> <span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1302,10 +1302,10 @@ should then contain the following directory:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
     
   </body>
