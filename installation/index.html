@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://autodiff.github.io/installation/">
       
-      <link rel="icon" href="../img/logo.png">
+      <link rel="icon" href="../img/autodiff-logo.svg">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
@@ -257,22 +257,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-by-conda" class="md-nav__link">
-    Installation by conda
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-by-copying" class="md-nav__link">
-    Installation by copying
+  <a href="#installation-using-conda" class="md-nav__link">
+    Installation using Conda
   </a>
   
 </li>
@@ -280,6 +266,13 @@
         <li class="md-nav__item">
   <a href="#installation-using-cmake" class="md-nav__link">
     Installation using CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-by-copying" class="md-nav__link">
+    Installation by copying
   </a>
   
 </li>
@@ -370,22 +363,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-by-conda" class="md-nav__link">
-    Installation by conda
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-by-copying" class="md-nav__link">
-    Installation by copying
+  <a href="#installation-using-conda" class="md-nav__link">
+    Installation using Conda
   </a>
   
 </li>
@@ -393,6 +372,13 @@
         <li class="md-nav__item">
   <a href="#installation-using-cmake" class="md-nav__link">
     Installation using CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-by-copying" class="md-nav__link">
+    Installation by copying
   </a>
   
 </li>
@@ -424,27 +410,22 @@
                 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <p>Installing <span style="font-family:'Comfortaa'">autodiff</span> is easy, since it is a <em>header-only library</em>. Follow
 the steps below.</p>
-<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
-<p>Download <span style="font-family:'Comfortaa'">autodiff</span> by either git cloning its <a href="https://github.com/autodiff/autodiff">GitHub repository</a>:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/autodiff/autodiff
-</code></pre></div>
-<p>or by <a href="https://github.com/autodiff/autodiff/archive/master.zip">clicking here</a> to start the download of a zip file, which
-you should extract to a directory of your choice.</p>
-<h2 id="installation-by-conda">Installation by conda<a class="headerlink" href="#installation-by-conda" title="Permanent link">&para;</a></h2>
-<p>The easiest way of installing <code>autodiff</code> is via conda:</p>
+<h2 id="installation-using-conda">Installation using Conda<a class="headerlink" href="#installation-using-conda" title="Permanent link">&para;</a></h2>
+<p>If you have <a href="https://www.anaconda.com/distribution/">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> installed (with Python 3.7+), you can
+install <span style="font-family:'Comfortaa'">autodiff</span> with a single command:</p>
 <div class="highlight"><pre><span></span><code>conda install conda-forge::autodiff
 </code></pre></div>
-<p>For this, install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>
-with Python 3.8+. You should be familiar with conda though.</p>
-<h2 id="installation-by-copying">Installation by copying<a class="headerlink" href="#installation-by-copying" title="Permanent link">&para;</a></h2>
-<p>Assuming the git cloned repository or extracted source code resides in a
-directory named <code>autodiff</code>, you can now copy the directory <code>autodiff/autodiff</code>
-to somewhere in your project directory and directly use <span style="font-family:'Comfortaa'">autodiff</span>.</p>
-<p>This quick and dirty solution might suffices in most cases. If this solution
-bothers you, read the next section!</p>
+<p>This will install <span style="font-family:'Comfortaa'">autodiff</span> in the conda environment that is active at the
+moment (e.g., the default conda environment is named <code>base</code>).</p>
 <h2 id="installation-using-cmake">Installation using CMake<a class="headerlink" href="#installation-using-cmake" title="Permanent link">&para;</a></h2>
-<p>If you have <code>cmake</code> installed in your system, you can then install <span style="font-family:'Comfortaa'">autodiff</span>
-(and also build its tests and examples) as follows:</p>
+<p>If you have <code>cmake</code> installed in your system, you can then not only install
+<span style="font-family:'Comfortaa'">autodiff</span> but also build its examples and tests. First, you'll need to
+download it by either git cloning its <a href="https://github.com/autodiff/autodiff">GitHub repository</a>:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/autodiff/autodiff
+</code></pre></div>
+<p>or by <a href="https://github.com/autodiff/autodiff/archive/master.zip">clicking here</a> to start the download of a zip file, which you
+should extract to a directory of your choice.</p>
+<p>Then, execute the following steps (assuming you are in the root of the source code directory of <span style="font-family:'Comfortaa'">autodiff</span>!):</p>
 <div class="highlight"><pre><span></span><code>mkdir .build &amp;&amp; cd .build
 cmake ..
 cmake --build . --target install
@@ -462,9 +443,18 @@ you may not be able to create a <code>build</code> directory.</p>
 systems. To install <span style="font-family:'Comfortaa'">autodiff</span> locally, use:</p>
 <div class="highlight"><pre><span></span><code>cmake .. -DCMAKE_INSTALL_PREFIX=/some/local/dir
 </code></pre></div>
+<h2 id="installation-by-copying">Installation by copying<a class="headerlink" href="#installation-by-copying" title="Permanent link">&para;</a></h2>
+<p>Assuming the git cloned repository or the extracted source code resides in a
+directory named <code>autodiff</code>, you can now copy the sub-directory
+<code>autodiff/autodiff</code> to somewhere in your project directory and directly use
+<span style="font-family:'Comfortaa'">autodiff</span>.</p>
 <h2 id="installation-failed-what-do-i-do">Installation failed. What do I do?<a class="headerlink" href="#installation-failed-what-do-i-do" title="Permanent link">&para;</a></h2>
-<p>Create a <a href="https://github.com/autodiff/autodiff/issues/new">new issue</a>, and let us know what happened and possibly howe
-we can improve the installation process of <span style="font-family:'Comfortaa'">autodiff</span>.</p>
+<p>Discuss with us first your issue on our <a href="https://gitter.im/autodiff/community">Gitter Community Channel</a>. We
+may be able to respond more quickly there on how to sort out your issue. If bug
+fixes are indeed required, we'll kindly ask you to create a <a href="https://github.com/autodiff/autodiff/issues/new">GitHub
+issue</a>, in which you can provide more details about the issue and keep
+track of our progress on fixing it. You are also welcome to recommend us
+installation improvements in the Gitter channel.</p>
                 
               
               

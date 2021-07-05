@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://autodiff.github.io/">
       
-      <link rel="icon" href="img/logo.png">
+      <link rel="icon" href="img/autodiff-logo.svg">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
@@ -419,20 +419,27 @@
                   </a>
                 
                 
-                <p><img src='img/header.svg' width='100%'></p>
+                <p><img src='img/autodiff-header.svg' width='100%'></p>
 <hr />
-<p><a href="https://gitter.im/autodiff/community"><img alt="Gitter chat" src="https://badges.gitter.im/autodiff/gitter.png" /></a></p>
+<p><a href="https://gitter.im/autodiff/community"><img alt="Gitter chat" src="https://badges.gitter.im/autodiff/gitter.png" /></a>
+<img alt="Linux build status" src="https://github.com/autodiff/autodiff/workflows/linux/badge.svg?branch=master" />
+<img alt="macOS build status" src="https://github.com/autodiff/autodiff/workflows/osx/badge.svg?branch=master" />
+<img alt="Windows build status" src="https://github.com/autodiff/autodiff/workflows/windows/badge.svg?branch=master" /></p>
 <h1 id="autodiff"><span style="font-family:'Comfortaa'">autodiff</span><a class="headerlink" href="#autodiff" title="Permanent link">&para;</a></h1>
 <p><span style="font-family:'Comfortaa'">autodiff</span> is a C++17 library that uses modern and advanced programming
-techniques to enable automatic computation of derivatives in an efficient
-and easy way.</p>
+techniques to enable automatic computation of derivatives in an efficient, easy,
+and intuitive way.</p>
+<p>We welcome you to use <span style="font-family:'Comfortaa'">autodiff</span> and recommend us any improvements you think
+it is necessary. You may want to do so by chatting with us on our <a href="https://gitter.im/autodiff/community">Gitter
+Community Channel</a> and/or by making proposals by creating a <a href="https://github.com/autodiff/autodiff/issues/new">GitHub
+issue</a>.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><span style="font-family:'Comfortaa'">autodiff</span> is planned to be a long-term maintained automatic differentiation
-project, with many more algorithms being implemented in the future. Please have
-in mind, however, that <span style="font-family:'Comfortaa'">autodiff</span> is still in its earlier stages of
-development. We welcome you to use <span style="font-family:'Comfortaa'">autodiff</span> and recommend us any
-improvements you think it is necessary.</p>
+<p>There are breaking changes in <span style="font-family:'Comfortaa'">autodiff</span> v0.6! Please check the updated
+<a href="tutorials/">Tutorials</a> page to learn how to correctly include the header
+files, the slightly changed API, and the new autodiff type <code>real</code> designed for
+efficient <strong>higher-order directional derivatives</strong>. This is in contrast to the
+<code>dual</code> type, which is designed for higher-order cross derivatives.</p>
 </div>
 <h2 id="demonstration">Demonstration<a class="headerlink" href="#demonstration" title="Permanent link">&para;</a></h2>
 <p>Consider the following function <em>f(x, y, z)</em>:</p>
@@ -441,7 +448,7 @@ improvements you think it is necessary.</p>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">z</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>which we use use to evaluate variable <em>u = f(x, y, z)</em>:</p>
+<p>which we use use to evaluate the variable <em>u = f(x, y, z)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span>
@@ -461,7 +468,7 @@ its derivatives <em>(∂u/∂x,  ∂u/∂y, ∂u/∂z)</em> with respect to the 
 variables</em> <em>(x, y, z)</em>.</p>
 <p>Enabling forward automatic differentiation for the calculation of derivatives
 using <span style="font-family:'Comfortaa'">autodiff</span> is relatively simple. For our previous function <em>f</em>, we only
-need to replace the floating-point type <code>double</code> to <code>autodiff::dual</code> for both
+need to replace the floating-point type <code>double</code> with <code>autodiff::dual</code> for both
 input and output variables:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dual</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">dual</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="n">dual</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">,</span> <span class="k">const</span> <span class="n">dual</span><span class="o">&amp;</span> <span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
@@ -498,12 +505,12 @@ output variable with respect to input variables.</p>
 <p>Thus, a single pass in a reverse mode calculation <strong>computes all derivatives</strong>,
 in contrast with forward mode, which requires one pass for each input variable.
 Note, however, that it is possible to change the behavior of a forward pass so
-that many (even all) derivatives of an output variable are computed
+that many (perhaps even all) derivatives of an output variable are computed
 simultaneously (e.g., in a single forward pass, <em>∂u/∂x</em>,  <em>∂u/∂y</em>, and <em>∂u/∂z</em>
 are evaluated together with <em>u</em>, in contrast with three forward passes, each
 one computing the individual derivatives).</p>
 <p>Similar as before, we can use <span style="font-family:'Comfortaa'">autodiff</span> to enable reverse automatic
-differentiation for our function <em>f</em> by simply replacing type <code>double</code> by
+differentiation for our function <em>f</em> by simply replacing type <code>double</code> with
 <code>autodiff::var</code> as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="n">var</span> <span class="nf">f</span><span class="p">(</span><span class="n">var</span> <span class="n">x</span><span class="p">,</span> <span class="n">var</span> <span class="n">y</span><span class="p">,</span> <span class="n">var</span> <span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
@@ -527,7 +534,9 @@ be extracted from <code>dud</code> using <code>dud(x)</code>. The operations <co
 <code>dud(z)</code> involve no computations! Just extraction of derivatives previously
 computed with a call to function <code>autodiff::derivatives</code>.</p>
 <h2 id="get-in-touch">Get in touch!<a class="headerlink" href="#get-in-touch" title="Permanent link">&para;</a></h2>
-<p>Contact us on <a href="https://gitter.im/autodiff/community">Gitter</a> if you need support and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>.</p>
+<p>Contact us on <a href="https://gitter.im/autodiff/community">Gitter</a> or via a <a href="https://github.com/autodiff/autodiff/discussions/new">GitHub Discussion</a> if you
+need support and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>. If you would like to
+report a bug, then please create a new <a href="https://github.com/autodiff/autodiff/issues/new">GitHub Issue</a>.</p>
                 
               
               
