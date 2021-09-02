@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://autodiff.github.io/tutorials/">
       
       <link rel="icon" href="../img/autodiff-logo.svg">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -340,6 +340,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jacobian-matrix-of-a-vector-function-using-memory-maps" class="md-nav__link">
+    Jacobian matrix of a vector function using memory maps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#higher-order-cross-derivatives-of-a-scalar-function" class="md-nav__link">
     Higher-order cross derivatives of a scalar function
   </a>
@@ -571,6 +578,13 @@
           <li class="md-nav__item">
   <a href="#jacobian-matrix-of-a-vector-function-with-parameters" class="md-nav__link">
     Jacobian matrix of a vector function with parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jacobian-matrix-of-a-vector-function-using-memory-maps" class="md-nav__link">
+    Jacobian matrix of a vector function using memory maps
   </a>
   
 </li>
@@ -1007,6 +1021,43 @@ suggestions on how to better demonstrate the capabilities of <span style="font-f
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Jp = </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Jp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">   </span><span class="c1">// print the evaluated Jacobian matrix dF/dp</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Jq = </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Jq</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">   </span><span class="c1">// print the evaluated Jacobian matrix dF/dq</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Jqpx = </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Jqpx</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// print the evaluated Jacobian matrix [dF/dq, dF/dp, dF/dx]</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="jacobian-matrix-of-a-vector-function-using-memory-maps">Jacobian matrix of a vector function using memory maps<a class="headerlink" href="#jacobian-matrix-of-a-vector-function-using-memory-maps" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// C++ includes</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="c1">// autodiff include</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;autodiff/forward/real.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;autodiff/forward/real/eigen.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">autodiff</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// The vector function for which the Jacobian is needed</span>
+<span class="n">VectorXreal</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">VectorXreal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Map</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">VectorXreal</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">                           </span><span class="c1">// the input vector x with 5 variables</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">                         </span><span class="c1">// x = [1, 2, 3, 4, 5]</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span><span class="w">                               </span><span class="c1">// the output Jacobian as a flat array</span>
+
+<span class="w">    </span><span class="n">VectorXreal</span><span class="w"> </span><span class="n">F</span><span class="p">;</span><span class="w">                              </span><span class="c1">// the output vector F = f(x) evaluated together with Jacobian matrix below</span>
+<span class="w">    </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">MatrixXd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">                   </span><span class="c1">// the output Jacobian dF/dx mapped onto the flat array</span>
+
+<span class="w">    </span><span class="n">jacobian</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">J</span><span class="p">);</span><span class="w">           </span><span class="c1">// evaluate the output vector F and the Jacobian matrix dF/dx</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;F = </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="c1">// print the evaluated output vector F</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;J = </span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">J</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="c1">// print the evaluated Jacobian matrix dF/dx</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;y = &quot;</span><span class="p">;</span><span class="w">                        </span><span class="c1">// print the flat array</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="higher-order-cross-derivatives-of-a-scalar-function">Higher-order cross derivatives of a scalar function<a class="headerlink" href="#higher-order-cross-derivatives-of-a-scalar-function" title="Permanent link">&para;</a></h3>
@@ -1629,7 +1680,7 @@ should then contain the following directory:</p>
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.756773cc.min.js"></script>
       
     
   </body>
