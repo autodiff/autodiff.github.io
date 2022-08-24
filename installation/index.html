@@ -268,6 +268,19 @@
     Installation using Conda
   </a>
   
+    <nav class="md-nav" aria-label="Installation using Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developement-environment" class="md-nav__link">
+    Developement Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -375,6 +388,19 @@
     Installation using Conda
   </a>
   
+    <nav class="md-nav" aria-label="Installation using Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developement-environment" class="md-nav__link">
+    Developement Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -426,6 +452,16 @@ install <span style="font-family:'Comfortaa'">autodiff</span> with a single comm
 </code></pre></div>
 <p>This will install <span style="font-family:'Comfortaa'">autodiff</span> in the conda environment that is active at the
 moment (e.g., the default conda environment is named <code>base</code>).</p>
+<h3 id="developement-environment">Developement Environment<a class="headerlink" href="#developement-environment" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.anaconda.com/distribution/">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> can be used to create a full development environment using <a href="https://conda-devenv.readthedocs.io/en/latest/">conda-devenv</a>.</p>
+<p>You can install <a href="https://conda-devenv.readthedocs.io/en/latest/">conda-devenv</a> and build the development environment defined in <code>environment.devenv.yml</code> as follows:
+<div class="highlight"><pre><span></span><code>conda install conda-devenv
+conda devenv
+</code></pre></div></p>
+<p>The above commands will produce a {{ conda }} environment called <span style="font-family:'Comfortaa'">autodiff</span> with all the dependencies installed. You can activate the development environment with
+<div class="highlight"><pre><span></span><code>conda activate autodiff
+</code></pre></div>
+and follow the instructions below to build <span style="font-family:'Comfortaa'">autodiff</span> from source.</p>
 <h2 id="installation-using-cmake">Installation using CMake<a class="headerlink" href="#installation-using-cmake" title="Permanent link">&para;</a></h2>
 <p>If you have <code>cmake</code> installed in your system, you can then not only install
 <span style="font-family:'Comfortaa'">autodiff</span> but also build its examples and tests. First, you'll need to
