@@ -443,8 +443,8 @@
 <p><span style="font-family:'Comfortaa'">autodiff</span> is a C++17 library that uses modern and advanced programming
 techniques to enable automatic computation of derivatives in an efficient, easy,
 and intuitive way.</p>
-<p>We welcome you to use <span style="font-family:'Comfortaa'">autodiff</span> and recommend us any improvements you think
-it is necessary. You may want to do so by chatting with us on our <a href="https://gitter.im/autodiff/community">Gitter
+<p>We welcome you to use <span style="font-family:'Comfortaa'">autodiff</span> and recommend to us any improvements you think
+are necessary. You may want to do so by chatting with us on our <a href="https://gitter.im/autodiff/community">Gitter
 Community Channel</a> and/or by making proposals by creating a <a href="https://github.com/autodiff/autodiff/issues/new">GitHub
 issue</a>.</p>
 <div class="admonition attention">
@@ -542,11 +542,7 @@ can be calculated:</p>
 </code></pre></div>
 <p>The function <code>autodiff::derivatives</code> will traverse the expression tree stored
 in variable <code>u</code> and compute all its derivatives with respect to the input
-variables <em>(x, y, z)</em>, which are then stored in the object <code>dud</code>. The
-derivative of <code>u</code> with respect to input variable <code>x</code> (i.e., <em>∂u/∂x</em>) can then
-be extracted from <code>dud</code> using <code>dud(x)</code>. The operations <code>dud(x)</code>, <code>dud(y)</code>,
-<code>dud(z)</code> involve no computations! Just extraction of derivatives previously
-computed with a call to function <code>autodiff::derivatives</code>.</p>
+variables <em>(x, y, z)</em>.</p>
 <h2 id="get-in-touch">Get in touch!<a class="headerlink" href="#get-in-touch" title="Permanent link">&para;</a></h2>
 <p>Contact us on <a href="https://gitter.im/autodiff/community">Gitter</a> or via a <a href="https://github.com/autodiff/autodiff/discussions/new">GitHub Discussion</a> if you
 need support and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>. If you would like to
