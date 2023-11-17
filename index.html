@@ -95,8 +95,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="autodiff" class="md-header__button md-logo" aria-label="autodiff" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="img/autodiff-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -201,8 +200,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="autodiff" class="md-nav__button md-logo" aria-label="autodiff" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="img/autodiff-logo.svg" alt="logo">
 
     </a>
     autodiff
@@ -301,8 +299,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-in-touch" class="md-nav__link">
-    Get in touch!
+  <a href="#questions" class="md-nav__link">
+    Questions?
   </a>
   
 </li>
@@ -445,8 +443,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-in-touch" class="md-nav__link">
-    Get in touch!
+  <a href="#questions" class="md-nav__link">
+    Questions?
   </a>
   
 </li>
@@ -471,38 +469,25 @@
 
 <p><img src='img/autodiff-header.svg' width='100%'></p>
 <hr />
-<p><a href="https://gitter.im/autodiff/community"><img alt="Gitter chat" src="https://badges.gitter.im/autodiff/gitter.png" /></a>
-<img alt="Linux build status" src="https://github.com/autodiff/autodiff/workflows/linux/badge.svg?branch=master" />
-<img alt="macOS build status" src="https://github.com/autodiff/autodiff/workflows/osx/badge.svg?branch=master" />
-<img alt="Windows build status" src="https://github.com/autodiff/autodiff/workflows/windows/badge.svg?branch=master" /></p>
+<p><img alt="Linux build status" src="https://github.com/autodiff/autodiff/workflows/linux/badge.svg?branch=main" />
+<img alt="macOS build status" src="https://github.com/autodiff/autodiff/workflows/osx/badge.svg?branch=main" />
+<img alt="Windows build status" src="https://github.com/autodiff/autodiff/workflows/windows/badge.svg?branch=main" /></p>
 <h1 id="autodiff"><span style="font-family:'Comfortaa'">autodiff</span><a class="headerlink" href="#autodiff" title="Permanent link">&para;</a></h1>
 <p><span style="font-family:'Comfortaa'">autodiff</span> is a C++17 library that uses modern and advanced programming
 techniques to enable automatic computation of derivatives in an efficient, easy,
 and intuitive way.</p>
-<p>We welcome you to use <span style="font-family:'Comfortaa'">autodiff</span> and recommend to us any improvements you think
-are necessary. You may want to do so by chatting with us on our <a href="https://gitter.im/autodiff/community">Gitter
-Community Channel</a> and/or by making proposals by creating a <a href="https://github.com/autodiff/autodiff/issues/new">GitHub
-issue</a>.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>There are breaking changes in <span style="font-family:'Comfortaa'">autodiff</span> v0.6! Please check the updated
-<a href="tutorials/">Tutorials</a> page to learn how to correctly include the header
-files, the slightly changed API, and the new autodiff type <code>real</code> designed for
-efficient <strong>higher-order directional derivatives</strong>. This is in contrast to the
-<code>dual</code> type, which is designed for higher-order cross derivatives.</p>
-</div>
 <h2 id="demonstration">Demonstration<a class="headerlink" href="#demonstration" title="Permanent link">&para;</a></h2>
 <p>Consider the following function <em>f(x, y, z)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>which we use use to evaluate the variable <em>u = f(x, y, z)</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 </code></pre></div>
 <p>How can we minimally transform this code so that not only <em>u</em>, but also its
 derivatives <em>∂u/∂x</em>, <em>∂u/∂y</em>, and <em>∂u/∂z</em>, can be computed?</p>
@@ -522,18 +507,18 @@ need to replace the floating-point type <code>double</code> with <code>autodiff:
 input and output variables:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dual</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dual</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">dual</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">dual</span><span class="o">&amp;</span><span class="w"> </span><span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>We can now compute the derivatives <em>∂u/∂x</em>,  <em>∂u/∂y</em>, and <em>∂u/∂z</em> as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dual</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
 <span class="n">dual</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
 <span class="n">dual</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
-<span class="n">dual</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="n">dual</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 
-<span class="kt">double</span><span class="w"> </span><span class="n">ux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">uy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">wrt</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">uz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">wrt</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="w"> </span><span class="n">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">ux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="o">,</span><span class="w"> </span><span class="nf">wrt</span><span class="p">(</span><span class="n">x</span><span class="o">),</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">uy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="o">,</span><span class="w"> </span><span class="nf">wrt</span><span class="p">(</span><span class="n">y</span><span class="o">),</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">uz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="o">,</span><span class="w"> </span><span class="nf">wrt</span><span class="p">(</span><span class="n">z</span><span class="o">),</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
 </code></pre></div>
 <p>The auxiliary function <code>autodiff::wrt</code>, an acronym for <strong>with respect to</strong>,
 is used to indicate which input variable <em>(x, y, z)</em> is the selected one to
@@ -564,7 +549,7 @@ differentiation for our function <em>f</em> by simply replacing type <code>doubl
 <code>autodiff::var</code> as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="n">var</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The code below demonstrates how the derivatives <em>∂u/∂x</em>,  <em>∂u/∂y</em>, and <em>∂u/∂z</em>
@@ -572,17 +557,17 @@ can be calculated:</p>
 <div class="highlight"><pre><span></span><code><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
 <span class="n">var</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
 <span class="n">var</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
-<span class="n">var</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+<span class="n">var</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
 
-<span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">ux</span><span class="p">,</span><span class="w"> </span><span class="n">uy</span><span class="p">,</span><span class="w"> </span><span class="n">uz</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">derivatives</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
+<span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">ux</span><span class="p">,</span><span class="w"> </span><span class="n">uy</span><span class="p">,</span><span class="w"> </span><span class="n">uz</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">derivatives</span><span class="p">(</span><span class="n">u</span><span class="o">,</span><span class="w"> </span><span class="nf">wrt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
 </code></pre></div>
 <p>The function <code>autodiff::derivatives</code> will traverse the expression tree stored
 in variable <code>u</code> and compute all its derivatives with respect to the input
 variables <em>(x, y, z)</em>.</p>
-<h2 id="get-in-touch">Get in touch!<a class="headerlink" href="#get-in-touch" title="Permanent link">&para;</a></h2>
-<p>Contact us on <a href="https://gitter.im/autodiff/community">Gitter</a> or via a <a href="https://github.com/autodiff/autodiff/discussions/new">GitHub Discussion</a> if you
-need support and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>. If you would like to
-report a bug, then please create a new <a href="https://github.com/autodiff/autodiff/issues/new">GitHub Issue</a>.</p>
+<h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<p>Contact us on our <a href="https://github.com/autodiff/autodiff/discussions/new?category=q-a">GitHub Discussion Channel</a> if you need support
+and assistance when using <span style="font-family:'Comfortaa'">autodiff</span>. If you would like to report a bug, then
+please create a new <a href="https://github.com/autodiff/autodiff/issues/new">GitHub Issue</a>.</p>
 
 
 
@@ -604,7 +589,7 @@ report a bug, then please create a new <a href="https://github.com/autodiff/auto
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2018–2021 Allan Leal
+      Copyright &copy; 2018–2024 Allan Leal
     </div>
   
   
